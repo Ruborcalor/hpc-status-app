@@ -178,9 +178,9 @@ Each of these pull data from a json file, the location of which can be customize
 
 Developed with node v10. Yarn v1.22 is used for managing node packages.
 
-During start the frontend by running `cd client && yarn start` and start the backend by running `node app.js`.
+Start the frontend by running `cd client && yarn start` and start the backend by running `node app.js`.
 
-Prepare a production build with `cd client && yarn build`.
+Prepare a production build of the frontend with `cd client && yarn build`.
 
 ## Available Scripts
 
