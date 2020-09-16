@@ -1,7 +1,7 @@
 [{
   "name": "Lab 1",
   "fairshare": 0.7,
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "fairshareTableData": [{
     "user": "mwesson",
     "usage": 9688438
@@ -30,7 +30,7 @@
 }, {
   "name": "Lab 2",
   "fairshare": 0.2,
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "fairshareTableData": [{
     "user": "mwesson",
     "usage": 9688438

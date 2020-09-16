@@ -1,6 +1,6 @@
 [{
   "name": "Private Partition 1",
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "nodes": {
     "active": 200,
     "draining": 459,
@@ -18,7 +18,7 @@
   }
 }, {
   "name": "Private Partition 2",
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "nodes": {
     "active": 600,
     "draining": 859,
