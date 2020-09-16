@@ -6,7 +6,7 @@ const SharedPartitions = (props) => {
   const [partitionData, setPartitionData] = React.useState([]);
 
   useEffect(() => {
-    axios.get('/api/sharedPartitionData')
+    axios.get('/pun/dev/hpc_2/api/sharedPartitionData')
       .then(( partitionData ) => {
         console.log(partitionData);
         setPartitionData(partitionData.data);

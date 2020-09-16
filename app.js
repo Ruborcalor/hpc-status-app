@@ -10,6 +10,11 @@ const apiBasename = basename + "/api";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // API calls
 
+// create a GET route
+app.get('/express_backend', (req, res) => {
+  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+});
+
 app.get(apiBasename + "/user", (req, res) => {
   res.json({ username: username });
 });

@@ -2,7 +2,7 @@
   "name": "status_app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/pun/dev/hpc_2",
+  "proxy": "http://localhost:5000",
   "homepage": "https://academic-login.rc.fas.harvard.edu/pun/dev/hpc_2",
   "dependencies": {
     "@material-ui/core": "^4.11.0",

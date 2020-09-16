@@ -7,17 +7,20 @@ const PrivatePartitions = (props) => {
 
   useEffect(() => {
     axios
-      .get("/api/user")
+      .get("/pun/dev/hpc_2/api/user")
       .then((user) =>
-        axios.get("/api/privatePartitionData").then((partitionData) => {
-          const userPartitionData = partitionData.data.filter(
-            (partitionObject) => partitionObject.users.indexOf(user.data.username) !== -1
-          );
-          // console.log(user.data.username);
-          // console.log(partitionData);
-          // console.log(userPartitionData);
-          setPartitionData(userPartitionData);
-        })
+        axios
+          .get("/pun/dev/hpc_2/api/privatePartitionData")
+          .then((partitionData) => {
+            const userPartitionData = partitionData.data.filter(
+              (partitionObject) =>
+                partitionObject.users.indexOf(user.data.username) !== -1
+            );
+            // console.log(user.data.username);
+            // console.log(partitionData);
+            // console.log(userPartitionData);
+            setPartitionData(userPartitionData);
+          })
       )
       .catch(console.log);
   }, []);

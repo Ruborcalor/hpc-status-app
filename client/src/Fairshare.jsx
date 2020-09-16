@@ -7,9 +7,9 @@ const Fairshare = (props) => {
 
   useEffect(() => {
     axios
-      .get("/api/user")
+      .get("/pun/dev/hpc_2/api/user")
       .then((user) =>
-        axios.get("/api/fairshareData").then((fairshareData) => {
+        axios.get("/pun/dev/hpc_2/api/fairshareData").then((fairshareData) => {
           const userFairshareData = fairshareData.data.filter(
             (fairshareObject) =>
               fairshareObject.users.indexOf(user.data.username) !== -1

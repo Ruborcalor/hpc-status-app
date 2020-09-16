@@ -7,26 +7,22 @@ const Storage = (props) => {
 
   useEffect(() => {
     axios
-      .get("/api/user")
+      .get("/pun/dev/hpc_2/api/user")
       .then((user) =>
-            axios.get("/api/storageData").then((storageData) => {
-              const userStorageData = storageData.data.filter(
-                (storageObject) =>
-                  storageObject.users.indexOf(user.data.username) !== -1
-              );
-              setStorageData(userStorageData);
-            })
-           )
+        axios.get("/pun/dev/hpc_2/api/storageData").then((storageData) => {
+          const userStorageData = storageData.data.filter(
+            (storageObject) =>
+              storageObject.users.indexOf(user.data.username) !== -1
+          );
+          setStorageData(userStorageData);
+        })
+      )
       .catch(function (error) {
         console.log(error);
       });
   }, []);
 
-
-  return (
-    <StorageCardGrid storageData={storageData}/>
-  );
+  return <StorageCardGrid storageData={storageData} />;
 };
 
 export default Storage;
-
