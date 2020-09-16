@@ -2,6 +2,7 @@
   "name": "status_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://academic-login.rc.fas.harvard.edu/pun/dev/hpc_2",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",

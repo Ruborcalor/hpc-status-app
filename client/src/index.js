@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/pun/dev/hpc_2">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
