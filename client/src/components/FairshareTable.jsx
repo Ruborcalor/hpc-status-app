@@ -37,8 +37,8 @@ const FairshareTable = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {fairshareTableData.map((row) => (
-            <TableRow key={row.name}>
+          {fairshareTableData.map((row, index) => (
+            <TableRow key={row.user}>
               <TableCell component="th" scope="row">
                 {row.user}
               </TableCell>

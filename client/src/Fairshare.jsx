@@ -1,74 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import FairshareCardGrid from "./components/FairshareCardGrid";
 
-const fairshareData = [
-  {
-    name: "Lab 1",
-    fairshare: 0.7,
-    fairshareTableData: [
-      {
-        user: "mwesson",
-        usage: 9688438,
-      },
-      {
-        user: "trhone",
-        usage: 2423585
-      },
-      {
-        user: "saydjari",
-        usage: 2234131
-      },
-      {
-        user: "rualanxue",
-        usage: 40678
-      },
-      {
-        user: "mwesson",
-        usage: 9688438,
-      },
-      {
-        user: "trhone",
-        usage: 2423585
-      },
-      {
-        user: "saydjari",
-        usage: 2234131
-      },
-      {
-        user: "rualanxue",
-        usage: 40678
-      }
-    ]
-  },
-  {
-    name: "Lab 2",
-    fairshare: 0.2,
-    fairshareTableData: [
-      {
-        user: "mwesson",
-        usage: 9688438,
-      },
-      {
-        user: "trhone",
-        usage: 2423585
-      },
-      {
-        user: "saydjari",
-        usage: 2234131
-      },
-      {
-        user: "rualanxue",
-        usage: 40678
-      }
-    ]
-  },
-];
-
 const Fairshare = (props) => {
-  return (
-    <FairshareCardGrid fairshareData={fairshareData}/>
-  );
+  const [fairshareData, setFairshareData] = React.useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/user")
+      .then((user) =>
+        axios.get("/api/fairshareData").then((fairshareData) => {
+          const userFairshareData = fairshareData.data.filter(
+            (fairshareObject) =>
+              fairshareObject.users.indexOf(user.data.username) !== -1
+          );
+          setFairshareData(userFairshareData);
+        })
+      )
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  return <FairshareCardGrid fairshareData={fairshareData} />;
 };
 
 export default Fairshare;
-

@@ -1,0 +1,47 @@
+[{
+  "name": "Lab 1",
+  "fairshare": 0.7,
+  "users": ["gautierk", "anotheruser", "ckillian"],
+  "fairshareTableData": [{
+    "user": "mwesson",
+    "usage": 9688438
+  }, {
+    "user": "trhone",
+    "usage": 2423585
+  }, {
+    "user": "saydjari",
+    "usage": 2234131
+  }, {
+    "user": "rualanxue",
+    "usage": 40678
+  }, {
+    "user": "oij",
+    "usage": 9688438
+  }, {
+    "user": "supername",
+    "usage": 2423585
+  }, {
+    "user": "yesname",
+    "usage": 2234131
+  }, {
+    "user": "hiname",
+    "usage": 40678
+  }]
+}, {
+  "name": "Lab 2",
+  "fairshare": 0.2,
+  "users": ["gautierk", "anotheruser", "ckillian"],
+  "fairshareTableData": [{
+    "user": "mwesson",
+    "usage": 9688438
+  }, {
+    "user": "trhone",
+    "usage": 2423585
+  }, {
+    "user": "saydjari",
+    "usage": 2234131
+  }, {
+    "user": "rualanxue",
+    "usage": 40678
+  }]
+}]

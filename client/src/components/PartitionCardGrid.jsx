@@ -114,7 +114,7 @@ const PartitionCardGrid = (props) => {
     <div className={classes.root}>
       <Grid container spacing={3}>
         {partitionData.map((partitionObject, index) => (
-          <Grid item xs={6}>
+          <Grid key={partitionObject.name} item xs={6}>
             <PartitionCard
               classes={classes}
               partitionObject={partitionObject}

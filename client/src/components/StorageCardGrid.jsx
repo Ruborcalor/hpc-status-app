@@ -107,7 +107,7 @@ const StorageCardGrid = (props) => {
     <div className={classes.root}>
       <Grid container spacing={3}>
         {storageData.map((storageObject, index) => (
-          <Grid item xs={6}>
+          <Grid item xs={6} key={storageObject.name} >
             <StorageCard classes={classes} storageObject={storageObject} />
           </Grid>
         ))}

@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import DnsIcon from '@material-ui/icons/Dns';
 import GroupIcon from '@material-ui/icons/Group';
@@ -113,23 +113,15 @@ export default function PermanentDrawerLeft() {
             </ListItem>
           ))}
         </List>
-        {/* <Divider /> */}
-        {/* <List> */}
-        {/*   {['All mail', 'Trash', 'Spam'].map((text, index) => ( */}
-        {/*     <ListItem button key={text}> */}
-        {/*       <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-        {/*       <ListItemText primary={text} /> */}
-        {/*     </ListItem> */}
-        {/*   ))} */}
-        {/* </List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
+          <Route exact path="/" component={() => <Redirect to="/shared-partitions"/>}/>
           <Route exact path="/shared-partitions" component={SharedPartitions} />
-          <Route path="/private-partitions" component={PrivatePartitions} />
-          <Route path="/fairshare" component={Fairshare} />
-          <Route path="/storage" component={Storage} />
+          <Route exact path="/private-partitions" component={PrivatePartitions} />
+          <Route exact path="/fairshare" component={Fairshare} />
+          <Route exact path="/storage" component={Storage} />
         </Switch>
 
       </main>

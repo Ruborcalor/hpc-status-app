@@ -1,34 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import StorageCardGrid from "./components/StorageCardGrid";
 
-const storageData = [
-  {
-    name: "Homefolder",
-    path: "/n/academic_homes/g_34166/u_316301_g_34166",
-    block: {
-      limit: 1000,
-      usage: 932
-    },
-    file: {
-      limit: 400,
-      usage: 274
-    }
-  },
-  {
-    name: "Global Scratch",
-    path: "/n/scratch",
-    block: {
-      limit: 5000,
-      usage: 932
-    },
-    file: {
-      limit: 500,
-      usage: 300
-    }
-  },
-];
-
 const Storage = (props) => {
+  const [storageData, setStorageData] = React.useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/user")
+      .then((user) =>
+            axios.get("/api/storageData").then((storageData) => {
+              const userStorageData = storageData.data.filter(
+                (storageObject) =>
+                  storageObject.users.indexOf(user.data.username) !== -1
+              );
+              setStorageData(userStorageData);
+            })
+           )
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+
   return (
     <StorageCardGrid storageData={storageData}/>
   );

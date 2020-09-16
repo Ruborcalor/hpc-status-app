@@ -95,7 +95,7 @@ const FairshareCardGrid = (props) => {
     <div className={classes.root}>
       <Grid container spacing={3}>
         {fairshareData.map((fairshareObject, index) => (
-          <Grid item xs={6}>
+          <Grid item xs={6} key={fairshareObject.name} >
             <FairshareCard
               classes={classes}
               fairshareObject={fairshareObject}
