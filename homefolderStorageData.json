@@ -1,0 +1,40 @@
+[{
+    "name": "Homefolder",
+    "path": "/n/academic_homes/g_34166/u_316301_g_34166",
+    "users": ["u_316301_g_34166"],
+    "block": {
+      "limit": 1000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 400,
+      "usage": 274
+    }
+  },
+  {
+    "name": "Homefolder",
+    "path": "/n/academic_homes/g_34166/u_316301_g_34166",
+    "users": ["user_two"],
+    "block": {
+      "limit": 1000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 400,
+      "usage": 274
+    }
+  },
+ {
+   "name": "Homefolder",
+   "path": "/n/academic_homes/g_34166/u_316301_g_34166",
+   "users": ["gautierk"],
+   "block": {
+     "limit": 1000,
+     "usage": 932
+   },
+   "file": {
+     "limit": 400,
+     "usage": 274
+   }
+ }
+]

@@ -3,33 +3,20 @@ import axios from 'axios';
 import PartitionCardGrid from "./components/PartitionCardGrid";
 
 const SharedPartitions = (props) => {
-  const [partitionData, setPartitionData] = React.useState([]);
+  const [sharedPartitionData, setSharedPartitionData] = React.useState([]);
 
   useEffect(() => {
-    axios.get('/pun/dev/hpc_2/api/sharedPartitionData')
-      .then(( partitionData ) => {
-        console.log(partitionData);
-        setPartitionData(partitionData.data);
+    axios
+      .get(process.env.REACT_APP_BASENAME + "/api/sharedPartitionData")
+      .then((userSharedPartitionData) => {
+        setSharedPartitionData(userSharedPartitionData.data);
       })
       .catch(function (error) {
         console.log(error);
       });
   }, []);
 
-  // useEffect(() => {
-  //   axios.get('/user')
-  //     .then(({ username }) => {
-  //       axios.get()
-  //       console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // });
-
-  return (
-    <PartitionCardGrid partitionData={partitionData}/>
-  );
+  return <PartitionCardGrid partitionData={sharedPartitionData} />;
 };
 
 export default SharedPartitions;

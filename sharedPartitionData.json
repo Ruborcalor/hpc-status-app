@@ -1,5 +1,5 @@
 [{
-  "name": "Public Partition 1",
+  "name": "Shared Partition 1",
   "nodes": {
     "active": 400,
     "draining": 159,
@@ -16,7 +16,7 @@
     "blocked": 12
   }
 }, {
-  "name": "Public Partition 2",
+  "name": "Shared Partition 2",
   "nodes": {
     "active": 500,
     "draining": 159,

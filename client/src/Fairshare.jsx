@@ -7,16 +7,10 @@ const Fairshare = (props) => {
 
   useEffect(() => {
     axios
-      .get("/pun/dev/hpc_2/api/user")
-      .then((user) =>
-        axios.get("/pun/dev/hpc_2/api/fairshareData").then((fairshareData) => {
-          const userFairshareData = fairshareData.data.filter(
-            (fairshareObject) =>
-              fairshareObject.users.indexOf(user.data.username) !== -1
-          );
-          setFairshareData(userFairshareData);
-        })
-      )
+      .get(process.env.REACT_APP_BASENAME + "/api/fairshareData")
+      .then((userFairshareData) => {
+        setFairshareData(userFairshareData.data);
+      })
       .catch(function (error) {
         console.log(error);
       });

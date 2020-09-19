@@ -1,0 +1,44 @@
+[{
+    "name": "Global Scratch Lab Y",
+    "path": "/n/scratch",
+    "groups": ["sys"],
+    "block": {
+      "limit": 5000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 500,
+      "usage": 300
+    }
+  },
+  {
+    "name": "Global Scratch Lab X",
+    "path": "/n/scratch",
+    "groups": [
+      "sys"
+    ],
+    "block": {
+      "limit": 5000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 500,
+      "usage": 300
+    }
+  },
+{
+  "name": "Global Scratch Lab Z",
+  "path": "/n/scratch",
+  "groups": [
+    "sys"
+  ],
+  "block": {
+    "limit": 5000,
+    "usage": 932
+  },
+  "file": {
+    "limit": 500,
+    "usage": 300
+  }
+}
+]

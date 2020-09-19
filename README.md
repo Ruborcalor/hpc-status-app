@@ -182,6 +182,11 @@ Start the frontend by running `cd client && yarn start` and start the backend by
 
 Prepare a production build of the frontend with `cd client && yarn build`.
 
+## Variables
+
+const basename in app.js is used for proper routing.
+also in package.json of react app.
+
 ## Available Scripts
 
 In the `client` directory, you can run:

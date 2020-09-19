@@ -44,4 +44,31 @@
     "user": "rualanxue",
     "usage": 40678
   }]
+},
+{
+  "name": "Lab 3",
+  "fairshare": 0.2,
+  "users": [
+    "anotheruser",
+    "ckillian",
+    "u_316301_g_34166"
+  ],
+  "fairshareTableData": [
+    {
+      "user": "mwesson",
+      "usage": 9688438
+    },
+    {
+      "user": "trhone",
+      "usage": 2423585
+    },
+    {
+      "user": "saydjari",
+      "usage": 2234131
+    },
+    {
+      "user": "rualanxue",
+      "usage": 40678
+    }
+  ]
 }]

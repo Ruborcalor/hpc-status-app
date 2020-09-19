@@ -3,29 +3,20 @@ import axios from "axios";
 import PartitionCardGrid from "./components/PartitionCardGrid";
 
 const PrivatePartitions = (props) => {
-  const [partitionData, setPartitionData] = React.useState([]);
+  const [privatePartitionData, setPrivatePartitionData] = React.useState([]);
 
   useEffect(() => {
     axios
-      .get("/pun/dev/hpc_2/api/user")
-      .then((user) =>
-        axios
-          .get("/pun/dev/hpc_2/api/privatePartitionData")
-          .then((partitionData) => {
-            const userPartitionData = partitionData.data.filter(
-              (partitionObject) =>
-                partitionObject.users.indexOf(user.data.username) !== -1
-            );
-            // console.log(user.data.username);
-            // console.log(partitionData);
-            // console.log(userPartitionData);
-            setPartitionData(userPartitionData);
-          })
-      )
-      .catch(console.log);
+      .get(process.env.REACT_APP_BASENAME + "/api/privatePartitionData")
+      .then((userPrivatePartitionData) => {
+        setPrivatePartitionData(userPrivatePartitionData.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }, []);
 
-  return <PartitionCardGrid partitionData={partitionData} />;
+  return <PartitionCardGrid partitionData={privatePartitionData} />;
 };
 
 export default PrivatePartitions;
