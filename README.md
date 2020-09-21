@@ -6,9 +6,16 @@ The frontend is developed in React with CRA and Material-UI. The backend is deve
 
 ## Screenshots
 
+### Shared Partition View
 ![Shared Partition View](./doc_images/shared_partitions.png)
+
+### Private Partition View
 ![Private Partition View](./doc_images/private_partitions.png)
+
+### Fairshare View
 ![Fairshare View](./doc_images/fairshare.png)
+
+### Storage View
 ![Storage View](./doc_images/storage.png)
 
 ## Data
