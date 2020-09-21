@@ -4,6 +4,14 @@
 
 The frontend is developed in React with CRA and Material-UI. The backend is developed with node express. This repository is mirrored at https://github.com/Ruborcalor/hpc-status-app. Feel free to open issues there.
 
+## Screenshots
+
+[oij](http://localhost:3000/pun/dev/hpc_2/shared-partitions)
+[Shared Partition View](./doc_images/shared_partitions.png)
+[Private Partition View](./doc_images/private_partitions.png)
+[Fairshare View](./doc_images/fairshare.png)
+[Storage View](./doc_images/storage.png)
+
 ## Data
 
 There are four views in the status app:
@@ -215,9 +223,9 @@ Each of these pull data from a json file, the location of which can be customize
 
 Developed with node v10. Yarn v1.22 is used for managing node packages.
 
-Start the frontend by running `cd client && yarn start` and start the backend by running `node app.js`.
+Start the frontend by running `cd client && yarn start` and start the backend by running `node app.js`. The backend runs on port 5000. The frontend runs on port 3000 and proxies api requests to the backend. Visit the site at http://localhost:3000/pun/dev/hpc_2/shared-partitions
 
-Prepare a production build of the frontend with `cd client && yarn build`.
+Prepare a production build of the frontend with `cd client && yarn build`. Then you can run `node app.js` and the backend will serve the frontend. Visit the site at http://localhost:5000/pun/dev/hpc_2/shared-partitions
 
 The app is served at a subroute based on the `basename`. See the `Variables` section of the README for more.
 
