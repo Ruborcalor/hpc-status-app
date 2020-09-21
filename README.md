@@ -2,7 +2,7 @@
 
 ## Stack
 
-The frontend is developed in React with CRA and Material-UI. The backend is developed with node express.
+The frontend is developed in React with CRA and Material-UI. The backend is developed with node express. This repository is mirrored at https://github.com/Ruborcalor/hpc-status-app. Feel free to open issues there.
 
 ## Data
 
@@ -57,7 +57,7 @@ Each of these pull data from a json file, the location of which can be customize
 ```
 [{
   "name": "Private Partition 1",
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "groups": ["sys", "group2"],
   "nodes": {
     "active": 200,
     "draining": 459,
@@ -75,7 +75,7 @@ Each of these pull data from a json file, the location of which can be customize
   }
 }, {
   "name": "Private Partition 2",
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "groups": ["sys", "group3"],
   "nodes": {
     "active": 600,
     "draining": 859,
@@ -99,7 +99,7 @@ Each of these pull data from a json file, the location of which can be customize
 [{
   "name": "Lab 1",
   "fairshare": 0.7,
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "fairshareTableData": [{
     "user": "mwesson",
     "usage": 9688438
@@ -128,7 +128,7 @@ Each of these pull data from a json file, the location of which can be customize
 }, {
   "name": "Lab 2",
   "fairshare": 0.2,
-  "users": ["gautierk", "anotheruser", "ckillian"],
+  "users": ["gautierk", "anotheruser", "ckillian", "u_316301_g_34166"],
   "fairshareTableData": [{
     "user": "mwesson",
     "usage": 9688438
@@ -145,33 +145,70 @@ Each of these pull data from a json file, the location of which can be customize
 }]
 ```
 
-### storageData.json
+### homefolderStorageData.json
+
+
 ```
 [{
-  "name": "Homefolder",
-  "path": "/n/academic_homes/g_34166/u_316301_g_34166",
-  "users": ["ckillian"],
-  "block": {
-    "limit": 1000,
-    "usage": 932
+    "name": "Homefolder",
+    "path": "/n/academic_homes/g_34166/u_316301_g_34166",
+    "users": ["u_316301_g_34166"],
+    "block": {
+      "limit": 1000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 400,
+      "usage": 274
+    }
   },
-  "file": {
-    "limit": 400,
-    "usage": 274
+  {
+    "name": "Homefolder",
+    "path": "/n/academic_homes/g_34166/u_316301_g_34166",
+    "users": ["user_two"],
+    "block": {
+      "limit": 1000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 400,
+      "usage": 274
+    }
   }
-}, {
-  "name": "Global Scratch",
-  "path": "/n/scratch",
-  "users": ["gautierk"],
-  "block": {
-    "limit": 5000,
-    "usage": 932
+]
+```
+
+### scratchStorageData.json
+```
+[{
+    "name": "Global Scratch Lab Y",
+    "path": "/n/scratch",
+    "groups": ["sys"],
+    "block": {
+      "limit": 5000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 500,
+      "usage": 300
+    }
   },
-  "file": {
-    "limit": 500,
-    "usage": 300
+  {
+    "name": "Global Scratch Lab X",
+    "path": "/n/scratch",
+    "groups": [
+      "sys"
+    ],
+    "block": {
+      "limit": 5000,
+      "usage": 932
+    },
+    "file": {
+      "limit": 500,
+      "usage": 300
+    }
   }
-}]
+]
 ```
 
 ## Development
@@ -182,10 +219,11 @@ Start the frontend by running `cd client && yarn start` and start the backend by
 
 Prepare a production build of the frontend with `cd client && yarn build`.
 
+The app is served at a subroute based on the `basename`. See the `Variables` section of the README for more.
+
 ## Variables
 
-const basename in app.js is used for proper routing.
-also in package.json of react app.
+The app is served on a subroute. The subroute is set with the basename variable which is present in `client/package.json`, `app.js`, and `.env`. Make sure to set these variables based on the subroute that you are using. This will change when moving to production for example. It is currently set to `/pun/dev/hpc_2` because when I added the project to the app develop section of OnDemand I choose `hpc_2` as the name of app.
 
 ## Available Scripts
 
